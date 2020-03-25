@@ -1,3 +1,7 @@
+input[type="checkbox"] {
+  display: none;
+}
+
 label {
   background: #2b323f;
   display: flex;
@@ -26,8 +30,12 @@ label {
   left: 0;
   top: 0;
   border-radius: 50%;
-  background-color: #0ac97e;
+  background-color: #ffffff;
   transform: translate(0, 25%);
+}
+
+.toggle-switch .toggler-text {
+  color: #ffffff;
 }
 
 .toggle-switch input[type="checkbox"]:checked ~ .toggler {
@@ -37,6 +45,7 @@ label {
 
 .toggle-switch input[type="checkbox"]:checked ~ .toggler:before {
   transform: translate(90%, 25%);
+  background-color: #0ac97e;
 }
 
 .toggle-switch input[type="checkbox"]:checked ~ .toggler-text {
