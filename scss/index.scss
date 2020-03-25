@@ -1,0 +1,56 @@
+$background: #2b323f;
+$success: #0ac97e;
+$toggler-border: #ffffff;
+$ratio: 8px;
+$toggler-width: $ratio * 3;
+$toggler-height: $ratio * 2;
+$toggler-indicator: $ratio * 1.5;
+$toggler-indicator-height-pos: 100 -
+  (100 * ($toggler-indicator / $toggler-height)) * 1%;
+$transition: 0.3s all ease-out;
+
+input[type="checkbox"] {
+}
+
+label {
+  background: $background;
+  display: flex;
+}
+.toggle-switch {
+  position: relative;
+  .toggler {
+    transition: $transition;
+    width: $toggler-width;
+    height: $toggler-height;
+    border: medium solid $toggler-border;
+    border-radius: $ratio * 2;
+    background-color: $toggler-border + "26";
+    position: relative;
+    &:before {
+      transition: $transition;
+      content: "";
+      width: $toggler-indicator;
+      height: $toggler-indicator;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      background-color: $success;
+      transform: translate(0, $toggler-indicator-height-pos);
+    }
+  }
+  input[type="checkbox"] {
+    &:checked {
+      ~ .toggler {
+        background-color: $success + "26";
+        border-color: $success;
+        &:before {
+          transform: translate(90%, $toggler-indicator-height-pos);
+        }
+      }
+      ~ .toggler-text {
+        color: $success;
+      }
+    }
+  }
+}
