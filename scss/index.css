@@ -1,17 +1,45 @@
-input[type="checkbox"] {
-  display: none;
+body * {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+  color: inherit;
 }
 
-label {
+body.enableCSS {
+  font-family: Roboto, "Open Sans", Helvetica, Arial;
   background: #2b323f;
+  color: white;
+}
+
+body.enableCSS .d-flex {
   display: flex;
 }
 
-.toggle-switch {
+body.enableCSS .align-items-center {
+  align-items: center;
+}
+
+body.enableCSS .justify-content-between {
+  justify-content: space-between;
+}
+
+body.enableCSS h2 {
+  margin: 20px auto;
+}
+
+body.enableCSS label {
+  display: flex;
+}
+
+body.enableCSS .toggle-switch {
   position: relative;
 }
 
-.toggle-switch .toggler {
+body.enableCSS .toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+body.enableCSS .toggle-switch .toggler {
   transition: 0.3s all ease-out;
   width: 24px;
   height: 16px;
@@ -21,7 +49,7 @@ label {
   position: relative;
 }
 
-.toggle-switch .toggler:before {
+body.enableCSS .toggle-switch .toggler:before {
   transition: 0.3s all ease-out;
   content: "";
   width: 12px;
@@ -34,20 +62,264 @@ label {
   transform: translate(0, 25%);
 }
 
-.toggle-switch .toggler-text {
+body.enableCSS .toggle-switch .toggler-text {
   color: #ffffff;
 }
 
-.toggle-switch input[type="checkbox"]:checked ~ .toggler {
+body.enableCSS .toggle-switch input[type="checkbox"]:checked ~ .toggler {
   background-color: "#0ac97e26";
   border-color: #0ac97e;
 }
 
-.toggle-switch input[type="checkbox"]:checked ~ .toggler:before {
+body.enableCSS .toggle-switch input[type="checkbox"]:checked ~ .toggler:before {
   transform: translate(90%, 25%);
   background-color: #0ac97e;
 }
 
-.toggle-switch input[type="checkbox"]:checked ~ .toggler-text {
+body.enableCSS .toggle-switch input[type="checkbox"]:checked ~ .toggler-text {
   color: #0ac97e;
+}
+
+body.enableCSS .card {
+  background-color: #fafafa;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #2b323f;
+  flex: 0 0 auto;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+body.enableCSS .card .img {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+body.enableCSS .card h3 {
+  font-size: 24px;
+}
+
+body.enableCSS .card p.small {
+  font-size: 12px;
+}
+
+body.enableCSS .card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+body.enableCSS .card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+body.enableCSS .card:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+body.enableCSS .card:nth-child(4) {
+  animation-delay: 2s;
+}
+
+body.enableCSS .card:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+body.enableCSS .card:nth-child(6) {
+  animation-delay: 3s;
+}
+
+body.enableCSS .card:nth-child(7) {
+  animation-delay: 3.5s;
+}
+
+body.enableCSS .card:nth-child(8) {
+  animation-delay: 4s;
+}
+
+body.enableCSS .card:nth-child(9) {
+  animation-delay: 4.5s;
+}
+
+body.enableCSS .card:nth-child(10) {
+  animation-delay: 5s;
+}
+
+body.enableCSS .card:nth-child(11) {
+  animation-delay: 5.5s;
+}
+
+body.enableCSS .card:nth-child(12) {
+  animation-delay: 6s;
+}
+
+body.enableCSS .card:nth-child(13) {
+  animation-delay: 6.5s;
+}
+
+body.enableCSS .card:nth-child(14) {
+  animation-delay: 7s;
+}
+
+body.enableCSS .card:nth-child(15) {
+  animation-delay: 7.5s;
+}
+
+body.enableCSS .card:nth-child(16) {
+  animation-delay: 8s;
+}
+
+body.enableCSS .card:nth-child(17) {
+  animation-delay: 8.5s;
+}
+
+body.enableCSS .card:nth-child(18) {
+  animation-delay: 9s;
+}
+
+body.enableCSS .card:nth-child(19) {
+  animation-delay: 9.5s;
+}
+
+body.enableCSS .card:nth-child(20) {
+  animation-delay: 10s;
+}
+
+body.enableCSS .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.enableCSS .toggle-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+body.enableCSS .list-icon,
+body.enableCSS .grid-icon {
+  position: relative;
+  margin: 15px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+body.enableCSS .list-icon input[type="radio"],
+body.enableCSS .grid-icon input[type="radio"] {
+  display: none;
+}
+
+body.enableCSS .square-top:before, body.enableCSS .square-top:after,
+body.enableCSS .square-bottom:before,
+body.enableCSS .square-bottom:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: white;
+  position: absolute;
+}
+
+body.enableCSS .square-top:before {
+  top: 0;
+  left: 0;
+}
+
+body.enableCSS .square-top:after {
+  top: 0;
+  right: 0;
+}
+
+body.enableCSS .square-bottom:before {
+  bottom: 0;
+  left: 0;
+}
+
+body.enableCSS .square-bottom:after {
+  bottom: 0;
+  right: 0;
+}
+
+body.enableCSS .list-icon .rectangle {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  background-color: white;
+}
+
+body.enableCSS .list-icon .rectangle:before, body.enableCSS .list-icon .rectangle:after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background: white;
+  display: block;
+}
+
+body.enableCSS .list-icon .rectangle:before {
+  margin-top: 8px;
+}
+
+body.enableCSS .list-icon .rectangle:after {
+  margin: 5px 0;
+}
+
+body.enableCSS .list-icon input[type="radio"]:checked ~ .rectangle,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .rectangle {
+  background-color: #0ac97e;
+}
+
+body.enableCSS .list-icon input[type="radio"]:checked ~ .rectangle:before, body.enableCSS .list-icon input[type="radio"]:checked ~ .rectangle:after,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .rectangle:before,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .rectangle:after {
+  background-color: #0ac97e;
+}
+
+body.enableCSS .list-icon input[type="radio"]:checked ~ .square-top:before, body.enableCSS .list-icon input[type="radio"]:checked ~ .square-top:after,
+body.enableCSS .list-icon input[type="radio"]:checked ~ .square-bottom:before,
+body.enableCSS .list-icon input[type="radio"]:checked ~ .square-bottom:after,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .square-top:before,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .square-top:after,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .square-bottom:before,
+body.enableCSS .grid-icon input[type="radio"]:checked ~ .square-bottom:after {
+  background: #0ac97e;
+}
+
+body.enableCSS .content {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+body.enableCSS .content.grid {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body.enableCSS .content.grid .card {
+  width: 250px;
+  text-align: center;
+  flex-direction: column;
+  margin: 15px;
+}
+
+body.enableCSS .content.grid .card .img {
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

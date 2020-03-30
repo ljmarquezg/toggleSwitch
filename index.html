@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="scss/index.css"/>
+    <link rel="stylesheet" type="text/css" href="scss/index.css" />
 </head>
+
 <body>
-    
-    <div>
-        <label for="switch" class="toggle-switch">
-            <input id="switch" type="checkbox" value="1">
-            <div class="toggler"></div>
-            <div class="toggler-text">Esto es un texto</div>
-        </label>
+    <div class="menu">
+        <div class="d-flex align-items-center">
+            <h2>Habilitar CSS</h2>
+            <label for="switch" class="toggle-switch">
+                <input id="switch" type="checkbox" class="switch enableCSS" value="1">
+                <div class="toggler"></div>
+                <div class="toggler-text">Al habilitar el checkbox se agregarán los estilos</div>
+            </label>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+            <h2>Vistas:</h2>
+            <label for="list" class="list-icon">
+                <input id="list" name="view" type="radio" class="list toggle-view" value="1" checked>
+                <span class="rectangle"></span>
+            </label>
+            <label for="grid" class="grid-icon">
+                <input id="grid" name="view" type="radio" class="grid toggle-view" value="1">
+                <span class="square-top"></span>
+                <span class="square-bottom"></span>
+            </label>
+        </div>
     </div>
+    <div id="content" class="content"></div>
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
+
 </html>

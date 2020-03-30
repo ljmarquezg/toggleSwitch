@@ -1,3 +1,4 @@
+$roboto: Roboto, "Open Sans", Helvetica, Arial;
 $background: #2b323f;
 $success: #0ac97e;
 $toggler-border: #ffffff;
@@ -9,55 +10,244 @@ $toggler-indicator-height-pos: 100 -
   (100 * ($toggler-indicator / $toggler-height)) * 1%;
 $transition: 0.3s all ease-out;
 
-input[type="checkbox"] {
-  display: none;
-}
+body {
+  * {
+    margin: 0;
+    padding: 0;
+    background: inherit;
+    color: inherit;
+  }
+  &.enableCSS {
+    font-family: $roboto;
+    background: $background;
+    color: white;
 
-label {
-  background: $background;
-  display: flex;
-}
-.toggle-switch {
-  position: relative;
-  .toggler {
-    transition: $transition;
-    width: $toggler-width;
-    height: $toggler-height;
-    border: medium solid $toggler-border;
-    border-radius: $ratio * 2;
-    background-color: $toggler-border + "26";
-    position: relative;
-    &:before {
-      transition: $transition;
-      content: "";
-      width: $toggler-indicator;
-      height: $toggler-indicator;
-      position: absolute;
-      left: 0;
-      top: 0;
-      border-radius: 50%;
-      background-color: $toggler-border;
-      transform: translate(0, $toggler-indicator-height-pos);
+    .d-flex {
+      display: flex;
     }
-  }
+    .align-items-center {
+      align-items: center;
+    }
+    .justify-content-between {
+      justify-content: space-between;
+    }
+    h2 {
+      margin: 20px auto;
+    }
 
-  .toggler-text {
-    color: $toggler-border;
-  }
-
-  input[type="checkbox"] {
-    &:checked {
-      ~ .toggler {
-        background-color: $success + "26";
-        border-color: $success;
+    label {
+      display: flex;
+    }
+    .toggle-switch {
+      position: relative;
+      input[type="checkbox"] {
+        display: none;
+      }
+      .toggler {
+        transition: $transition;
+        width: $toggler-width;
+        height: $toggler-height;
+        border: medium solid $toggler-border;
+        border-radius: $ratio * 2;
+        background-color: $toggler-border + "26";
+        position: relative;
         &:before {
-          transform: translate(90%, $toggler-indicator-height-pos);
-          background-color: $success;
+          transition: $transition;
+          content: "";
+          width: $toggler-indicator;
+          height: $toggler-indicator;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          background-color: $toggler-border;
+          transform: translate(0, $toggler-indicator-height-pos);
         }
       }
-      ~ .toggler-text {
-        color: $success;
+
+      .toggler-text {
+        color: $toggler-border;
+      }
+
+      input[type="checkbox"] {
+        &:checked {
+          ~ .toggler {
+            background-color: $success + "26";
+            border-color: $success;
+            &:before {
+              transform: translate(90%, $toggler-indicator-height-pos);
+              background-color: $success;
+            }
+          }
+          ~ .toggler-text {
+            color: $success;
+          }
+        }
       }
     }
+    .card {
+      background-color: #fafafa;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      color: $background;
+      flex: 0 0 auto;
+      opacity: 0;
+      .img {
+        border-radius: 50%;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        &.small {
+          font-size: 12px;
+        }
+      }
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i *0.5}s;
+        }
+      }
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+    }
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .list-icon,
+    .grid-icon {
+      position: relative;
+      margin: 15px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      input[type="radio"] {
+        display: none;
+      }
+    }
+
+    .square-top,
+    .square-bottom {
+      &:before,
+      &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: white;
+        position: absolute;
+      }
+    }
+
+    .square-top {
+      &:before {
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .square-bottom {
+      &:before {
+        bottom: 0;
+        left: 0;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .list-icon {
+      .rectangle {
+        width: 100%;
+        height: 4px;
+        margin: 0;
+        background-color: white;
+        &:before,
+        &:after {
+          content: "";
+          width: 100%;
+          height: 4px;
+          position: relative;
+          background: white;
+          display: block;
+        }
+        &:before {
+          margin-top: 8px;
+        }
+        &:after {
+          margin: 5px 0;
+        }
+      }
+    }
+
+    .list-icon,
+    .grid-icon {
+      input[type="radio"] {
+        &:checked {
+          ~ .rectangle {
+            background-color: $success;
+            &:before,
+            &:after {
+              background-color: $success;
+            }
+          }
+
+          ~ .square-top,
+          ~ .square-bottom {
+            &:before,
+            &:after {
+              background: $success;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      &.grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .card {
+          width: 250px;
+          text-align: center;
+          flex-direction: column;
+          margin: 15px;
+          .img {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
