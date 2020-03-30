@@ -11,6 +11,10 @@ body.enableCSS {
   color: white;
 }
 
+body.enableCSS .small {
+  font-size: 75%;
+}
+
 body.enableCSS .d-flex {
   display: flex;
 }
@@ -21,6 +25,10 @@ body.enableCSS .align-items-center {
 
 body.enableCSS .justify-content-between {
   justify-content: space-between;
+}
+
+body.enableCSS .flex-column {
+  flex-direction: column;
 }
 
 body.enableCSS h2 {
@@ -81,7 +89,7 @@ body.enableCSS .toggle-switch input[type="checkbox"]:checked ~ .toggler-text {
 }
 
 body.enableCSS .card {
-  background-color: #fafafa;
+  background-color: #e0e0e0;
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -94,6 +102,7 @@ body.enableCSS .card {
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+  transition: all ease 0.5s;
 }
 
 body.enableCSS .card .img {
@@ -111,84 +120,14 @@ body.enableCSS .card p.small {
   font-size: 12px;
 }
 
-body.enableCSS .card:nth-child(1) {
-  animation-delay: 0.5s;
+body.enableCSS .card .location {
+  display: flex;
+  flex-direction: column;
 }
 
-body.enableCSS .card:nth-child(2) {
-  animation-delay: 1s;
-}
-
-body.enableCSS .card:nth-child(3) {
-  animation-delay: 1.5s;
-}
-
-body.enableCSS .card:nth-child(4) {
-  animation-delay: 2s;
-}
-
-body.enableCSS .card:nth-child(5) {
-  animation-delay: 2.5s;
-}
-
-body.enableCSS .card:nth-child(6) {
-  animation-delay: 3s;
-}
-
-body.enableCSS .card:nth-child(7) {
-  animation-delay: 3.5s;
-}
-
-body.enableCSS .card:nth-child(8) {
-  animation-delay: 4s;
-}
-
-body.enableCSS .card:nth-child(9) {
-  animation-delay: 4.5s;
-}
-
-body.enableCSS .card:nth-child(10) {
-  animation-delay: 5s;
-}
-
-body.enableCSS .card:nth-child(11) {
-  animation-delay: 5.5s;
-}
-
-body.enableCSS .card:nth-child(12) {
-  animation-delay: 6s;
-}
-
-body.enableCSS .card:nth-child(13) {
-  animation-delay: 6.5s;
-}
-
-body.enableCSS .card:nth-child(14) {
-  animation-delay: 7s;
-}
-
-body.enableCSS .card:nth-child(15) {
-  animation-delay: 7.5s;
-}
-
-body.enableCSS .card:nth-child(16) {
-  animation-delay: 8s;
-}
-
-body.enableCSS .card:nth-child(17) {
-  animation-delay: 8.5s;
-}
-
-body.enableCSS .card:nth-child(18) {
-  animation-delay: 9s;
-}
-
-body.enableCSS .card:nth-child(19) {
-  animation-delay: 9.5s;
-}
-
-body.enableCSS .card:nth-child(20) {
-  animation-delay: 10s;
+body.enableCSS .card .location p {
+  display: flex;
+  flex-direction: row;
 }
 
 body.enableCSS .menu {
@@ -304,6 +243,11 @@ body.enableCSS .content.grid {
   flex-wrap: wrap;
 }
 
+body.enableCSS .content.grid .location {
+  display: none;
+  position: absolute;
+}
+
 body.enableCSS .content.grid .card {
   width: 250px;
   text-align: center;
@@ -313,6 +257,27 @@ body.enableCSS .content.grid .card {
 
 body.enableCSS .content.grid .card .img {
   margin: auto;
+}
+
+body.enableCSS .content.grid .card:hover {
+  z-index: 10;
+  background-color: #fafafa;
+  transform: scale(1.04);
+}
+
+body.enableCSS .content.grid .card:hover .location {
+  display: flex;
+  justify-content: space-around;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 15px;
+}
+
+body.enableCSS .content.grid .card:hover .location p {
+  flex-direction: column;
 }
 
 @keyframes fadeIn {

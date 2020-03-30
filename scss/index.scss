@@ -9,6 +9,8 @@ $toggler-indicator: $ratio * 1.5;
 $toggler-indicator-height-pos: 100 -
   (100 * ($toggler-indicator / $toggler-height)) * 1%;
 $transition: 0.3s all ease-out;
+$card-background: #e0e0e0;
+$card-background-hover: #fafafa;
 
 body {
   * {
@@ -22,6 +24,9 @@ body {
     background: $background;
     color: white;
 
+    .small {
+      font-size: 75%;
+    }
     .d-flex {
       display: flex;
     }
@@ -30,6 +35,9 @@ body {
     }
     .justify-content-between {
       justify-content: space-between;
+    }
+    .flex-column {
+      flex-direction: column;
     }
     h2 {
       margin: 20px auto;
@@ -86,7 +94,7 @@ body {
       }
     }
     .card {
-      background-color: #fafafa;
+      background-color: $card-background;
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
@@ -95,6 +103,11 @@ body {
       color: $background;
       flex: 0 0 auto;
       opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      transition: all ease 0.5s;
       .img {
         border-radius: 50%;
         margin-right: 10px;
@@ -109,15 +122,14 @@ body {
           font-size: 12px;
         }
       }
-      @for $i from 1 through 20 {
-        &:nth-child(#{$i}) {
-          animation-delay: #{$i *0.5}s;
+      .location {
+        display: flex;
+        flex-direction: column;
+        p {
+          display: flex;
+          flex-direction: row;
         }
       }
-      animation-name: fadeIn;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-out;
     }
     .menu {
       display: flex;
@@ -229,6 +241,10 @@ body {
       &.grid {
         flex-direction: row;
         flex-wrap: wrap;
+        .location {
+          display: none;
+          position: absolute;
+        }
         .card {
           width: 250px;
           text-align: center;
@@ -236,6 +252,24 @@ body {
           margin: 15px;
           .img {
             margin: auto;
+          }
+          &:hover {
+            z-index: 10;
+            background-color: $card-background-hover;
+            transform: scale(1.04);
+            .location {
+              display: flex;
+              justify-content: space-around;
+              left: 0;
+              right: 0;
+              border-radius: 0 0 5px 5px;
+              overflow: hidden;
+              flex-direction: row;
+              padding: 15px;
+              p {
+                flex-direction: column;
+              }
+            }
           }
         }
       }
